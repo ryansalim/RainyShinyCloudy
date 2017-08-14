@@ -61,13 +61,11 @@ class CurrentWeather {
                 
                 if let name = dict["name"] as? String {
                     self._cityName = name.capitalized
-                    print(self._cityName)
                 }
                 
                 if let weather = dict["weather"] as? [Dictionary<String, Any>] {
                     if let main = weather[0]["main"] as? String {
                         self._weatherType = main.capitalized
-                        print(self._weatherType)
                     }
                 }
                 
@@ -77,7 +75,6 @@ class CurrentWeather {
                         let kelvinToCelcius = (currentTemp - 273.15)
                         let celciusDegree = Double(round(10 * kelvinToCelcius/10))
                         self._currentTemp = celciusDegree
-                        print(self._currentTemp)
                     }
                 }
                 completed()
